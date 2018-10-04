@@ -11,7 +11,7 @@ const init = () => {
     events.testFunction();
     petData.testFunction();
     petComponent.testFunction();
-    petComponent.printToDom("printHere", "Print To Dom works");
+    petData.getPets();
 };
 
 init();

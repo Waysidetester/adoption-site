@@ -2,4 +2,8 @@ const testFunction = () => {
     console.log("petComponent linked");
 };
 
-export default {testFunction};
+const printToDom = (divId, stringToPrint) => {
+    document.getElementById(divId).innerHTML = stringToPrint;
+};
+
+export default {testFunction, printToDom};

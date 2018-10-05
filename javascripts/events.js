@@ -4,7 +4,6 @@ const filterAnimal = (animalId) => {
     const etarget = document.getElementById(animalId);
     etarget.addEventListener("click", (e) => {
         const clicked = e.currentTarget.innerHTML;
-        console.log(clicked)
         let cardsSorted = [];
         const cards = document.getElementsByClassName("col-4");
         if (cards.length < 30){

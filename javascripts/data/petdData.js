@@ -4,7 +4,6 @@ import petComponent from "../components/petComponent.js"
 function executeOnLoad () {
     let data = JSON.parse(this.responseText);
     petComponent.petObject = data.pets;
-    console.log(petComponent.petObject);
     petComponent.makeCards(petComponent.petObject);
 };
 

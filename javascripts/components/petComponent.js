@@ -15,7 +15,7 @@ const makeCards = (cardArray) => {
                                 <p class="card-text text-center">${cardArray[i].color}</p>    
                                 <p class="card-text text-center">${cardArray[i].specialSkill}</p>
                             </div>
-                            <div class="card-footer text-muted text-center">${cardArray[i].type}</div>
+                            <div class="card-footer text-center ${cardArray[i].type}">${cardArray[i].type}</div>
                         </div>
                     </div>`;
     }

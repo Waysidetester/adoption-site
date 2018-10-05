@@ -1,3 +1,18 @@
 .col-4 {
     margin: 0;
 }
+
+.dog {
+    color: blue;
+    background-color: lightblue;
+}
+
+.cat {
+    color: darkgoldenrod;
+    background-color: lightyellow;
+}
+
+.dino {
+    color: darkred;
+    background-color: lightpink;
+}

@@ -1,9 +1,5 @@
 import petComponent from "./components/petComponent.js";
 
-const testFunction = () => {
-    console.log("events linked");
-};
-
 const filterAnimal = (animalId) => {
     const etarget = document.getElementById(animalId);
     etarget.addEventListener("click", (e) => {
@@ -29,4 +25,4 @@ const exportButtons = () => {
     filterAnimal("dino");
 };
 
-export default {testFunction, exportButtons};
+export default {exportButtons};

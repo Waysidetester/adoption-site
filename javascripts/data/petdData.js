@@ -1,8 +1,5 @@
 import petComponent from "../components/petComponent.js"
 
-const testFunction = () => {
-    console.log("petdData linked");
-};
 
 function executeOnLoad () {
     let data = JSON.parse(this.responseText);
@@ -25,4 +22,4 @@ const getPets = () => {
 
 
 
-export default {testFunction, getPets};
+export default {getPets};

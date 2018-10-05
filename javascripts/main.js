@@ -7,11 +7,8 @@ const testFunction = () => {
 };
 
 const init = () => {
-    testFunction();
-    events.testFunction();
-    petData.testFunction();
-    petComponent.testFunction();
     petData.getPets();
+    events.exportButtons();
 };
 
 init();

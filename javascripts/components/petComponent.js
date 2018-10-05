@@ -19,13 +19,19 @@ const makeCards = (cardArray) => {
                                 <p class="card-text text-center">${cardArray[i].color}</p>    
                                 <p class="card-text text-center">${cardArray[i].specialSkill}</p>
                             </div>
-                            <div class="card-footer text-muted text-center">
-                                ${cardArray[i].type}
-                            </div>
+                            <div class="card-footer text-muted text-center">${cardArray[i].type}</div>
                         </div>
                     </div>`;
     }
     printToDom("printHere", newstring);
 };
 
-export default {testFunction, printToDom, makeCards, petObject};
+const cardLooper = (filteredCards) => {
+    let newCard = ``;
+    for (let j = 0; j < filteredCards.length; j++) {
+        newCard += `${filteredCards[j].outerHTML}`;
+    }
+    printToDom("printHere", newCard);
+};
+
+export default {testFunction, printToDom, makeCards, petObject, cardLooper};

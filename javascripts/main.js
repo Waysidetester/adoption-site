@@ -12,6 +12,7 @@ const init = () => {
     petData.testFunction();
     petComponent.testFunction();
     petData.getPets();
+    events.filterAnimal('dog');
 };
 
 init();

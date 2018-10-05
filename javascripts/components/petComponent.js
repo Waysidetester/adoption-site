@@ -26,4 +26,12 @@ const makeCards = (cardArray) => {
     printToDom("printHere", newstring);
 };
 
-export default {testFunction, printToDom, makeCards, petObject};
+const cardLooper = (filteredCards) => {
+    let newCard = ``;
+    for (let j = 0; j < filteredCards.length; j++) {
+        newCard += `${filteredCards[j].outerHTML}`;
+    }
+    printToDom("printHere", newCard);
+};
+
+export default {testFunction, printToDom, makeCards, petObject, cardLooper};

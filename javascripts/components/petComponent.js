@@ -1,7 +1,3 @@
-const testFunction = () => {
-    console.log("petComponent linked");
-};
-
 const printToDom = (divId, stringToPrint) => {
     document.getElementById(divId).innerHTML = stringToPrint;
 };
@@ -34,4 +30,4 @@ const cardLooper = (filteredCards) => {
     printToDom("printHere", newCard);
 };
 
-export default {testFunction, printToDom, makeCards, petObject, cardLooper};
+export default {printToDom, makeCards, petObject, cardLooper};

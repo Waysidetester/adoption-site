@@ -6,25 +6,23 @@ const filterAnimal = (animalId) => {
         const clicked = e.currentTarget.innerHTML;
         let cardsSorted = [];
         const cards = document.getElementsByClassName("col-4");
-        if (cards.length < 30){
-            petComponent.makeCards(petComponent.petObject);
-        } else {
         for (let i = 0; i < cards.length; i++){
-        let animalType = cards[i].childNodes[1].childNodes[7].innerHTML;
-        animalType = animalType.toUpperCase();
+            let animalType = cards[i].childNodes[1].childNodes[7].innerHTML;
+            animalType = animalType.toUpperCase();
             if (animalType === clicked) {
                 cardsSorted.push(cards[i]);
             }
         } 
         petComponent.cardLooper(cardsSorted);
-        }
+        petComponent.makeReset();
     })
 };
 
-const exportButtons = () => {
-    filterAnimal("dog");
-    filterAnimal("cat");
-    filterAnimal("dino");
+const resetEvent = () => {
+    document.getElementById("reset").addEventListener("click", () => {
+        petComponent.makeCards(petComponent.petObject);
+    })
 };
 
-export default {exportButtons};
+
+export default {filterAnimal, resetEvent};

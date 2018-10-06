@@ -1,10 +1,26 @@
+import events from "../events.js"
+
 const printToDom = (divId, stringToPrint) => {
     document.getElementById(divId).innerHTML = stringToPrint;
+};
+
+const animalButton = {
+    button1 : `<button id="dog" class="btn btn-primary">DOG</button>`,
+    button2 : `<button id="cat" class="btn btn-warning">CAT</button>`,
+    button3 : `<button id="dino" class="btn btn-danger">DINO</button>`
+};
+
+const resetButton = {
+    button1 : `<button id="reset" class="btn">RESET</button>`
 };
 
 let petObject = [];
 
 const makeCards = (cardArray) => {
+    makeButtons();
+    events.filterAnimal("dog");
+    events.filterAnimal("cat");
+    events.filterAnimal("dino");
     let newstring = ``
     for (let i = 0; i < cardArray.length; i++){
         newstring += `<div class="col-4">
@@ -15,11 +31,23 @@ const makeCards = (cardArray) => {
                                 <p class="card-text text-center">${cardArray[i].color}</p>    
                                 <p class="card-text text-center">${cardArray[i].specialSkill}</p>
                             </div>
-                            <div class="card-footer text-muted text-center">${cardArray[i].type}</div>
+                            <div class="card-footer text-center ${cardArray[i].type}">${cardArray[i].type}</div>
                         </div>
                     </div>`;
     }
     printToDom("printHere", newstring);
+};
+
+const makeButtons = () => {
+    let newString = `${animalButton.button1}
+                    ${animalButton.button2}
+                    ${animalButton.button3}`;
+    printToDom("buttonsHere", newString);
+};
+
+const makeReset = () => {
+    printToDom("buttonsHere", resetButton.button1);
+    events.resetEvent();
 };
 
 const cardLooper = (filteredCards) => {
@@ -30,4 +58,4 @@ const cardLooper = (filteredCards) => {
     printToDom("printHere", newCard);
 };
 
-export default {printToDom, makeCards, petObject, cardLooper};
+export default {printToDom, makeCards, petObject, cardLooper, makeReset};
